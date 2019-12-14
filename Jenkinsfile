@@ -52,6 +52,6 @@ stage('Docker Application Run') {
       sh "ls -all /var/run/docker.sock"
      // sh "mv ./target/devops*.jar ./data" 
       
-      dockerImage = docker.build("simplilearn-devops-project:latest").withRun('-p 9000:8090'){}
+      dockerImage = docker.build("simplilearn-devops-project:latest","-p 9000:8090")
     }
 }
