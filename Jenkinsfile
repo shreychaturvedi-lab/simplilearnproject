@@ -33,7 +33,7 @@ node {
       sh "ls -all /var/run/docker.sock"
       sh "mv ./target/devops*.jar ./data" 
       
-      dockerImage = docker.build("simplilearn-devops-project")
+      dockerImage = docker.build("simplilearn-devops-project").withRun('-p 9000:8090')
     }
    
     stage('Deploy Docker Image'){
