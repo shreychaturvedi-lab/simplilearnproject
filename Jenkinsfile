@@ -13,8 +13,8 @@ pipeline {
     }
  stage('Cleaning Containers') {
       steps {
-        sh "docker rm $(docker ps -a -q)"
-        sh "docker rmi $(docker images -q)"
+        sh "docker rm \$(docker ps -a -q)"
+        sh "docker rmi \$(docker images -q)"
       }
     }
     stage('Building image') {
