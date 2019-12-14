@@ -27,6 +27,13 @@ pipeline {
         }
       }
     }
+      stage('Build Project') {
+        steps{
+          script{
+            sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+         }
+       }
+    }
     stage('Build Docker Image') {
       steps{
         script{
