@@ -50,7 +50,7 @@ stage('Docker Application Run') {
       // build docker image
       sh "whoami"
       sh "ls -all /var/run/docker.sock"
-      sh "mv ./target/devops*.jar ./data" 
+     // sh "mv ./target/devops*.jar ./data" 
       
       dockerImage = docker.build("simplilearn-devops-project:latest").withRun('-p 9000:8090'){}
     }
