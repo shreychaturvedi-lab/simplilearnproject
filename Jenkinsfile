@@ -13,7 +13,7 @@ node {
     
     stage('Clone Repo') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/dstar55/docker-hello-world-spring-boot.git'
+      git 'https://github.com/shreychaturvedi-lab/simplilearnproject.git'
       // Get the Maven tool.
       // ** NOTE: This 'maven-3.6.3' Maven tool must be configured
       // **       in the global configuration.           
@@ -41,7 +41,7 @@ node {
       // build docker image
       sh "whoami"
       sh "ls -all /var/run/docker.sock"
-      sh "mv ./target/*devops*.jar ./data" 
+      sh "mv ./target/devops*.jar ./data" 
       
       dockerImage = docker.build("simplilearn-devops-project")
     }
