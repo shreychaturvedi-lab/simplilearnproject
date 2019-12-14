@@ -28,12 +28,16 @@ pipeline {
       }
     }
     stage('Build Docker Image') {
-      // build docker image
+      steps{
+        script{
+          // build docker image
       sh "whoami"
       sh "ls -all /var/run/docker.sock"
       sh "mv ./target/devops*.jar ./data" 
       
       dockerImage = docker.build("simplilearn-devops-project:latest").withRun('-p 9000:8090'){}
+        }
+      }
     }
     stage('Remove Unused docker image') {
       steps{
