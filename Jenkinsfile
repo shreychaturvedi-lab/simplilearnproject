@@ -30,6 +30,7 @@ pipeline {
       stage('Build Project') {
         steps{
           script{
+            def mvnHome = tool 'maven-3.6.3'
             sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
          }
        }
