@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "shreychaturvedi/simplilearn-devops-project"
-    registryCredential = 'github Credentials'
+    registryCredential = 'dockerhub'
     dockerImage = ''
   }
   agent any
