@@ -43,7 +43,7 @@ pipeline {
       sh "ls -all /var/run/docker.sock"
       sh "mv ./target/devops*.jar ./data" 
       
-      dockerImage = docker.build("simplilearn-devops-project:latest").withRun('-p 9000:8090'){}
+      sh "docker run -d -p 9000:8090 simplilearn-devops-project:$BUILD_NUMBER"
         }
       }
     }
