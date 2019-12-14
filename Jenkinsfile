@@ -11,6 +11,12 @@ pipeline {
         git 'https://github.com/shreychaturvedi-lab/simplilearnproject.git'
       }
     }
+ stage('Cleaning Containers') {
+      steps {
+        sh "docker rm $(docker ps -a -q)"
+        sh "docker rmi $(docker images -q)"
+      }
+    }
     stage('Building image') {
       steps{
         script {
